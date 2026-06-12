@@ -14,7 +14,9 @@ export function parse(raw){
       // find the first finite value among satellite columns (1-5)
       let gmsl = NaN;
       for (let i = 1; i < parts.length; i++) {
-        const v = Number(parts[i]);
+        const s = parts[i].trim();
+        if (s === '') continue;          // empty cell → skip (Number('') === 0, would be wrong)
+        const v = Number(s);
         if (Number.isFinite(v)) { gmsl = v; break; }
       }
       return { year, gmsl };

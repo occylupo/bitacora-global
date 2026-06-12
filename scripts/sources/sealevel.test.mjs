@@ -12,4 +12,7 @@ test('parse nivel del mar: value +mm, history numérica, sube', () => {
   const latest = r.history[r.history.length-1];
   assert.ok(Number.isFinite(latest), 'history latest debe ser número');
   assert.equal(r.dir, 'up');
+  // el ascenso total acumulado debe ser creíble (~+100 mm); aquí validamos el valor mostrado
+  const shown = parseInt(r.value, 10);
+  assert.ok(shown >= 80 && shown <= 130, `value mostrado ${shown} no es creíble (~+100mm)`);
 });
