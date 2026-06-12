@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-06-12T23:14:00Z",
+  "vitals": [
+    {"id":"co2","name":"Dióxido de carbono","value":429.6,"unit":"ppm","dir":"up","delta":"+2.4 / año","date":"2026-06-11","source":"NOAA","site":"Mauna Loa","sourceUrl":"https://gml.noaa.gov/ccgg/trends/","history":[427.1,427.8,428.3,429.0,429.6],"hash":"a1f3c9"},
+    {"id":"temperature","name":"Temperatura global","value":"+1.28","unit":"°C","dir":"up","delta":"+0.02 / año","date":"2026-06-10","source":"NASA","site":"GISTEMP","sourceUrl":"https://data.giss.nasa.gov/gistemp/","history":[1.18,1.21,1.2,1.25,1.28],"hash":"7b0e44"},
+    {"id":"sealevel","name":"Nivel del mar","value":"+105","unit":"mm","dir":"up","delta":"+3.4 / año","date":"2026-06-09","source":"NASA","site":"altimetría","sourceUrl":"https://climate.nasa.gov/vital-signs/sea-level/","history":[96,98,100,103,105],"hash":"c52a1f"},
+    {"id":"seaice","name":"Hielo marino ártico","value":"10.7","unit":"M km²","dir":"down","delta":"−12% vs media","date":"2026-06-11","source":"NSIDC","site":"extensión","sourceUrl":"https://nsidc.org/arcticseaicenews/","history":[12.5,12.0,11.6,11.1,10.7],"hash":"e98d20"},
+    {"id":"airquality","name":"Calidad del aire","value":"31","unit":"µg/m³ PM2.5","dir":"up","delta":"+4 vs OMS","date":"2026-06-12","source":"OpenAQ","site":"global","sourceUrl":"https://openaq.org/","history":[27,29,28,30,31],"hash":"2f7b6c"}]
+}
