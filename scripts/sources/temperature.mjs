@@ -17,22 +17,10 @@ export function parse(raw) {
     .map(c => ({ year: c[0].trim(), jd: parseFloat(c[JD]) }))
     .filter(r => Number.isFinite(r.jd));                   // discard incomplete years (***)
 
-  const last = rows[rows.length - 1];
-  const history = rows.slice(-12).map(r => Math.round(r.jd * 100) / 100);
-  const decadeStart = rows[rows.length - 11];
-  const delta = decadeStart
-    ? `+${(last.jd - decadeStart.jd).toFixed(2)} / déc.`
-    : null;
-
-  return {
-    unit: '°C',
-    value: last.jd,                              // numeric, for comparisons/sparklines
-    display: `+${last.jd.toFixed(2)}`,           // formatted display string
-    date: last.year,
-    dir: 'up',
-    delta,
-    history,
-  };
+  const lastNum = rows[rows.length - 1].jd;
+  const history = rows.slice(-12).map(r => Math.round(r.jd*100)/100);
+  return { unit:'°C', value: `+${lastNum.toFixed(2)}`, date: rows[rows.length-1].year,
+    dir:'up', delta:`+${(lastNum - rows[rows.length-11].jd).toFixed(2)} / déc.`, history };
 }
 
 export async function fetchRaw() {
