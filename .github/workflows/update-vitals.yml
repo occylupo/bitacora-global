@@ -25,6 +25,8 @@ jobs:
       # Baja las fuentes públicas y regenera data/vitals.json (fail-soft por fuente).
       - name: regenerar signos vitales
         run: node scripts/build-vitals.mjs
+        env:
+          OPENAQ_KEY: ${{ secrets.OPENAQ_KEY }}
 
       # Cada cambio se asienta como un commit fechado: el registro inalterable.
       - name: asentar el registro del día

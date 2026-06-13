@@ -4,8 +4,9 @@ import * as co2 from './sources/co2.mjs';
 import * as temperature from './sources/temperature.mjs';
 import * as sealevel from './sources/sealevel.mjs';
 import * as seaice from './sources/seaice.mjs';
+import * as airquality from './sources/airquality.mjs';
 
-const SOURCES = [co2, temperature, sealevel, seaice];
+const SOURCES = [co2, temperature, sealevel, seaice, airquality];
 
 const vitals = [];
 for (const s of SOURCES) {
@@ -20,12 +21,15 @@ for (const s of SOURCES) {
   }
 }
 
-// Aire: pendiente de clave OpenAQ (free). Asiento curado hasta que se cablee en vivo.
-const air = { id:'airquality', name:'Calidad del aire', value:'31', unit:'µg/m³ PM2.5',
-  dir:'up', delta:'+4 vs OMS', date:'2026-06', source:'OpenAQ', site:'global · curado',
-  sourceUrl:'https://openaq.org/', live:false, history:[27,29,28,30,31] };
-air.hash = seal(air.id, air.value, air.date);
-vitals.push(air);
+// Aire: si la corrida no tuvo OPENAQ_KEY (o falló), cae a un asiento curado para no dejar hueco.
+if (!vitals.find(v => v.id === 'airquality')) {
+  const air = { id:'airquality', name:'Calidad del aire', value:'9', unit:'µg/m³ PM2.5',
+    dir:'up', delta:'1.8× guía OMS', date:'2026-06', source:'OpenAQ',
+    site:'media de estaciones · curado', sourceUrl:'https://openaq.org/', live:false, history:[9] };
+  air.hash = seal(air.id, air.value, air.date);
+  vitals.push(air);
+  console.log('• airquality: curado (sin OPENAQ_KEY)');
+}
 
 if (vitals.length < 2) { console.error('sin fuentes'); process.exit(1); }
 writeFileSync(new URL('../data/vitals.json', import.meta.url),
