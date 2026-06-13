@@ -1,0 +1,36 @@
+name: actualizar signos vitales
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 05:00 UTC cada día
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Los parsers puros deben pasar antes de publicar nada (fixtures, sin red).
+      - name: tests
+        run: node --test scripts/lib/*.test.mjs scripts/sources/*.test.mjs
+
+      # Baja las fuentes públicas y regenera data/vitals.json (fail-soft por fuente).
+      - name: regenerar signos vitales
+        run: node scripts/build-vitals.mjs
+
+      # Cada cambio se asienta como un commit fechado: el registro inalterable.
+      - name: asentar el registro del día
+        run: |
+          git config user.name "bitácora"
+          git config user.email "bot@bitacoraglobal"
+          git add data/vitals.json
+          git diff --staged --quiet || git commit -m "registro: signos vitales $(date -u +%Y-%m-%d)"
+          git push
