@@ -1,12 +1,13 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { seal } from './lib/hash.mjs';
 import * as co2 from './sources/co2.mjs';
+import * as methane from './sources/methane.mjs';
 import * as temperature from './sources/temperature.mjs';
 import * as sealevel from './sources/sealevel.mjs';
 import * as seaice from './sources/seaice.mjs';
 import * as airquality from './sources/airquality.mjs';
 
-const SOURCES = [co2, temperature, sealevel, seaice, airquality];
+const SOURCES = [co2, methane, temperature, sealevel, seaice, airquality];
 
 const VITALS_PATH = new URL('../data/vitals.json', import.meta.url);
 // Asientos del registro anterior: si hoy una fuente cae, conservamos su última lectura.

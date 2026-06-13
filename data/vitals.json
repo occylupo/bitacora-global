@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:19:09.097Z",
+  "generatedAt": "2026-06-13T08:16:42.978Z",
   "vitals": [
     {
       "id": "co2",
@@ -28,6 +28,34 @@
       "sourceUrl": "https://gml.noaa.gov/ccgg/trends/",
       "live": true,
       "hash": "765807"
+    },
+    {
+      "id": "methane",
+      "name": "Metano",
+      "unit": "ppb",
+      "value": 1940.5,
+      "date": "2026-02",
+      "dir": "up",
+      "delta": "+7 / año",
+      "history": [
+        1933.5,
+        1934.5,
+        1933.1,
+        1928.9,
+        1926.4,
+        1930.2,
+        1939.2,
+        1946,
+        1946,
+        1942.5,
+        1940.9,
+        1940.5
+      ],
+      "source": "NOAA",
+      "site": "global",
+      "sourceUrl": "https://gml.noaa.gov/ccgg/trends_ch4/",
+      "live": true,
+      "hash": "e73060"
     },
     {
       "id": "temperature",
@@ -128,7 +156,8 @@
       "site": "media de estaciones",
       "sourceUrl": "https://openaq.org/",
       "live": true,
-      "hash": "ce601d"
+      "hash": "ce601d",
+      "stale": true
     }
   ]
 }
