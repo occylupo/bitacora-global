@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:17:04.656Z",
+  "generatedAt": "2026-06-13T07:19:09.097Z",
   "vitals": [
     {
       "id": "co2",
@@ -128,8 +128,7 @@
       "site": "media de estaciones",
       "sourceUrl": "https://openaq.org/",
       "live": true,
-      "hash": "ce601d",
-      "stale": true
+      "hash": "ce601d"
     }
   ]
 }
