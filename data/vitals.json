@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:14:50.141Z",
+  "generatedAt": "2026-06-13T07:17:45.329Z",
   "vitals": [
     {
       "id": "co2",
@@ -28,6 +28,34 @@
       "sourceUrl": "https://gml.noaa.gov/ccgg/trends/",
       "live": true,
       "hash": "765807"
+    },
+    {
+      "id": "temperature",
+      "name": "Temperatura global",
+      "unit": "°C",
+      "value": "+1.19",
+      "date": "2025",
+      "dir": "up",
+      "delta": "+0.29 / déc.",
+      "history": [
+        0.75,
+        0.9,
+        1.01,
+        0.92,
+        0.85,
+        0.98,
+        1.01,
+        0.85,
+        0.89,
+        1.17,
+        1.28,
+        1.19
+      ],
+      "source": "NASA",
+      "site": "GISTEMP",
+      "sourceUrl": "https://data.giss.nasa.gov/gistemp/",
+      "live": true,
+      "hash": "135aa1"
     },
     {
       "id": "sealevel",
