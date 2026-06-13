@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { seal } from './lib/hash.mjs';
 import * as co2 from './sources/co2.mjs';
 import * as temperature from './sources/temperature.mjs';
@@ -7,6 +7,13 @@ import * as seaice from './sources/seaice.mjs';
 import * as airquality from './sources/airquality.mjs';
 
 const SOURCES = [co2, temperature, sealevel, seaice, airquality];
+
+const VITALS_PATH = new URL('../data/vitals.json', import.meta.url);
+// Asientos del registro anterior: si hoy una fuente cae, conservamos su última lectura.
+let prev = {};
+try {
+  prev = Object.fromEntries(JSON.parse(readFileSync(VITALS_PATH,'utf8')).vitals.map(v => [v.id, v]));
+} catch {}
 
 const vitals = [];
 for (const s of SOURCES) {
@@ -18,6 +25,10 @@ for (const s of SOURCES) {
     console.log(`✓ ${s.SOURCE.id} ${r.value} ${r.unit}`);
   } catch (e) {
     console.error(`✗ ${s.SOURCE.id}: ${e.message}`);
+    if (prev[s.SOURCE.id]) {
+      vitals.push({ ...prev[s.SOURCE.id], stale:true });
+      console.log(`• ${s.SOURCE.id}: conservo el último asiento (fuente caída hoy)`);
+    }
   }
 }
 
