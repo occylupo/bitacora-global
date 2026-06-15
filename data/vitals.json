@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T08:36:45.999Z",
+  "generatedAt": "2026-06-15T10:49:59.341Z",
   "vitals": [
     {
       "id": "co2",
@@ -120,9 +120,8 @@
       "value": "10.6",
       "date": "2026-06",
       "dir": "down",
-      "delta": "−7% vs media",
+      "delta": "−6% vs media",
       "history": [
-        11.36,
         11.29,
         11.23,
         11.18,
@@ -133,7 +132,8 @@
         10.88,
         10.79,
         10.76,
-        10.62
+        10.62,
+        10.64
       ],
       "source": "NSIDC",
       "site": "extensión",
@@ -146,7 +146,7 @@
       "name": "Calidad del aire",
       "unit": "µg/m³ PM2.5",
       "value": "10",
-      "date": "2026-06-14",
+      "date": "2026-06-15",
       "dir": "up",
       "delta": "1.9× guía OMS",
       "history": [
@@ -156,7 +156,7 @@
       "site": "media de estaciones",
       "sourceUrl": "https://openaq.org/",
       "live": true,
-      "hash": "9fbf72"
+      "hash": "2e94f7"
     }
   ]
 }
