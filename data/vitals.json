@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T09:08:43.419Z",
+  "generatedAt": "2026-06-19T09:24:40.381Z",
   "vitals": [
     {
       "id": "co2",
@@ -117,12 +117,11 @@
       "id": "seaice",
       "name": "Hielo marino ártico",
       "unit": "M km²",
-      "value": "10.5",
+      "value": "10.4",
       "date": "2026-06",
       "dir": "down",
-      "delta": "−8% vs media",
+      "delta": "−9% vs media",
       "history": [
-        11.08,
         11.05,
         11,
         10.97,
@@ -133,30 +132,31 @@
         10.64,
         10.65,
         10.57,
-        10.45
+        10.45,
+        10.37
       ],
       "source": "NSIDC",
       "site": "extensión",
       "sourceUrl": "https://nsidc.org/arcticseaicenews/",
       "live": true,
-      "hash": "7ed41d"
+      "hash": "80e71d"
     },
     {
       "id": "airquality",
       "name": "Calidad del aire",
       "unit": "µg/m³ PM2.5",
-      "value": "9",
-      "date": "2026-06-18",
+      "value": "10",
+      "date": "2026-06-19",
       "dir": "up",
-      "delta": "1.8× guía OMS",
+      "delta": "2.0× guía OMS",
       "history": [
-        9
+        10
       ],
       "source": "OpenAQ",
       "site": "media de estaciones",
       "sourceUrl": "https://openaq.org/",
       "live": true,
-      "hash": "153075"
+      "hash": "af5206"
     }
   ]
 }
