@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T08:53:37.173Z",
+  "generatedAt": "2026-06-22T10:32:14.294Z",
   "vitals": [
     {
       "id": "co2",
@@ -83,7 +83,8 @@
       "site": "GISTEMP",
       "sourceUrl": "https://data.giss.nasa.gov/gistemp/",
       "live": true,
-      "hash": "135aa1"
+      "hash": "135aa1",
+      "stale": true
     },
     {
       "id": "sealevel",
@@ -120,9 +121,8 @@
       "value": "10.2",
       "date": "2026-06",
       "dir": "down",
-      "delta": "−10% vs media",
+      "delta": "−11% vs media",
       "history": [
-        10.97,
         10.88,
         10.79,
         10.76,
@@ -133,7 +133,8 @@
         10.45,
         10.37,
         10.37,
-        10.23
+        10.23,
+        10.18
       ],
       "source": "NSIDC",
       "site": "extensión",
@@ -145,18 +146,18 @@
       "id": "airquality",
       "name": "Calidad del aire",
       "unit": "µg/m³ PM2.5",
-      "value": "8",
-      "date": "2026-06-21",
+      "value": "10",
+      "date": "2026-06-22",
       "dir": "up",
-      "delta": "1.5× guía OMS",
+      "delta": "2.1× guía OMS",
       "history": [
-        8
+        10
       ],
       "source": "OpenAQ",
       "site": "media de estaciones",
       "sourceUrl": "https://openaq.org/",
       "live": true,
-      "hash": "813f43"
+      "hash": "891f7b"
     }
   ]
 }
